@@ -15,7 +15,7 @@ I successfully completed Week 1 of the AI Powerup course by:
 - **_ai.dev**: Impressed by the specialized workflows for different development phases
 
 ✅ **Created My Personal AI Workflow System**
-Repository: [Link to your GitHub repo]
+Repository: https://github.com/Ncam00/ai-powerup-oct-25
 
 ## 🚀 My Personalized Workflow
 
@@ -58,4 +58,4 @@ Ready for Week 2! 🎉
 
 ---
 
-*Repository link: [Your GitHub URL here]*
+*Repository link: https://github.com/Ncam00/ai-powerup-oct-25*
