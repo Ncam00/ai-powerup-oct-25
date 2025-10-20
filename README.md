@@ -2,6 +2,8 @@
 
 Welcome to the AI Powerup course! This repository contains weekly materials for learning how to effectively use AI coding assistants.
 
+**[Watch the Course Introduction](https://www.youtube.com/watch?v=PjTMDSADZIY)**
+
 ## Weekly Content
 
 ### Week 0: Practice Your Python
@@ -12,9 +14,9 @@ This course uses a lot of Python, so it's good to brush up on the basics before 
 
 Explore agentic coding assistants - AI tools that can autonomously plan, execute, and iterate on coding tasks. You'll try different tools (Gemini CLI, Claude Code, Codex CLI, OpenCode), research workflow frameworks (Promptkit, ai-dev-tasks, _ai.dev), and create your own personalized AI workflow repository.
 
-### Week 2: Abstraction Libraries and APIs
+### [Week 2: Building with LLMs](week2.md)
 
-Learn to implement AI capabilities through simplified frameworks. Explore key abstraction libraries that make LLM integration straightforward, build applications that leverage AI capabilities without deep ML expertise, and create reusable components for common AI implementation patterns.
+Learn to build applications with Large Language Models using frameworks like LangChain and create user interfaces with Streamlit. You'll build a chatbot, plan your personal project, and optionally create a joke teller app while exploring abstraction libraries and prompt engineering techniques.
 
 ### Week 3: Evaluation, Workflow & Observability
 

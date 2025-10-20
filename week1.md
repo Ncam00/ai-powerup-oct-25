@@ -1,5 +1,9 @@
 # Week 1: Agentic Coding Assistants
 
+**[Watch the Course Introduction](https://www.youtube.com/watch?v=PjTMDSADZIY)**
+
+**[Watch: Introduction to Agentic Coding Assistants](https://www.youtube.com/watch?v=v8F-_CQEeLw)**
+
 ## Overview
 
 This week you'll explore **agentic coding assistants** - AI tools that can autonomously plan, execute, and iterate on coding tasks with appropriate supervision.
