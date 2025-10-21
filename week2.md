@@ -26,17 +26,17 @@ By the end of this week, you will be able to:
 
 ## Weekly Tasks
 
-- [ ] Watch the weekly videos:
-  - [ ] [Building with LLMs](https://www.youtube.com/watch?v=aBMDxDNcLSA)
-  - [ ] [LangChain, Abstraction Libraries, and Streamlit](https://www.youtube.com/watch?v=voBCpMvA7Ns)
-- [ ] Review the slides:
-  - [ ] [Models and Prompting](./slides/2-models-and-prompting-export.pdf)
-  - [ ] [LangChain](./slides/2-langchain-export.pdf)
+- [x] Watch the weekly videos:
+  - [x] [Building with LLMs](https://www.youtube.com/watch?v=aBMDxDNcLSA)
+  - [x] [LangChain, Abstraction Libraries, and Streamlit](https://www.youtube.com/watch?v=voBCpMvA7Ns)
+- [x] Review the slides:
+  - [x] [Models and Prompting](./slides/2-models-and-prompting-export.pdf)
+  - [x] [LangChain](./slides/2-langchain-export.pdf)
 - [ ] Attend or watch the live Q&A session
-- [ ] Complete the "Build a LangChain Chatbot" exercise
-- [ ] Complete the "Plan Your Personal Project" exercise
-- [ ] Experiment with LangChain and Streamlit
-- [ ] Apply what you've learned to a project
+- [x] Complete the "Build a LangChain Chatbot" exercise
+- [x] Complete the "Plan Your Personal Project" exercise
+- [x] Experiment with LangChain and Streamlit
+- [x] Apply what you've learned to a project
 
 ### Optional
 - [ ] Share your project plan in the Discord channel
