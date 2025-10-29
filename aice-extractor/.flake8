@@ -1,0 +1,4 @@
+[flake8]
+exclude = .venv
+per-file-ignores = 
+    sample_data.py:E501,W291

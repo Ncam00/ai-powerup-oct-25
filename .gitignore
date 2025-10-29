@@ -9,3 +9,5 @@ GEMINI.md
 
 # API Keys and Environment Files
 *.env
+__pycache__/
+*.pyc
