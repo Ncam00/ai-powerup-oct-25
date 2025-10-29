@@ -12,9 +12,16 @@ from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langchain_core.callbacks.base import BaseCallbackHandler
 from learning_models import ConversationAnalysis, StudentProgress, SkillLevel, LearningObjective
 from learning_tools import PYTHON_LEARNING_TOOLS
-from langfuse.callback import CallbackHandler
 import uuid
 from datetime import datetime
+
+# Try to import Langfuse, but gracefully handle if not available
+try:
+    from langfuse.callback import CallbackHandler
+    LANGFUSE_AVAILABLE = True
+except ImportError:
+    LANGFUSE_AVAILABLE = False
+    CallbackHandler = None
 
 # Load environment variables
 load_dotenv()
@@ -33,6 +40,9 @@ class StreamlitCallbackHandler(BaseCallbackHandler):
 
 def get_langfuse_handler():
     """Create Langfuse callback handler for learning analytics"""
+    if not LANGFUSE_AVAILABLE:
+        return None
+        
     try:
         secret_key = os.getenv("LANGFUSE_SECRET_KEY")
         public_key = os.getenv("LANGFUSE_PUBLIC_KEY")
