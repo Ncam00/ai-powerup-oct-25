@@ -1,4 +1,4 @@
-# AI Calculator Agent Challenge
+AI Calculator Agent Challenge
 
 Welcome to the AI Calculator Agent challenge! In this project, you'll build an intelligent calculator that can use tools to solve math problems step by step.
 
