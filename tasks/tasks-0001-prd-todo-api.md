@@ -4,7 +4,7 @@ Based on PRD: `0001-prd-todo-api.md`
 
 ## High-Level Tasks
 
-### 1. Project Setup and Structure
+### 1. Project Setup and Structure ✅
 Set up the FastAPI project with proper directory structure, dependencies, and configuration files.
 
 ### 2. Data Models and Validation
@@ -28,12 +28,12 @@ Create comprehensive tests for all endpoints and ensure API documentation is com
 - [x] 1.4 Set up CORS middleware for frontend integration
 - [x] 1.5 Create requirements.txt file with all dependencies
 
-### 2. Data Models and Validation
-- [ ] 2.1 Create Todo Pydantic model with validation rules (title, description, completed, timestamps)
-- [ ] 2.2 Create TodoCreate model for POST requests (excluding auto-generated fields)
-- [ ] 2.3 Create TodoUpdate model for PUT requests (all fields optional except ID)
-- [ ] 2.4 Create error response models for consistent error handling
-- [ ] 2.5 Add validation for title length (max 200 chars) and description (max 1000 chars)
+### 2. Data Models and Validation ✅
+- [x] 2.1 Create Todo Pydantic model with validation rules (title, description, completed, timestamps)
+- [x] 2.2 Create TodoCreate model for POST requests (excluding auto-generated fields)
+- [x] 2.3 Create TodoUpdate model for PUT requests (all fields optional except ID)
+- [x] 2.4 Create error response models for consistent error handling
+- [x] 2.5 Add validation for title length (max 200 chars) and description (max 1000 chars)
 
 ### 3. Storage Layer Implementation
 - [ ] 3.1 Create TodoStorage class with JSON file persistence
