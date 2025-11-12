@@ -9,13 +9,21 @@ from langchain_core.messages import HumanMessage, ToolMessage
 from calculator_tools import CALCULATOR_TOOLS
 
 # Import Langfuse for observability
-from langfuse.callback import CallbackHandler
+try:
+    from langfuse.callback import CallbackHandler
+    LANGFUSE_AVAILABLE = True
+except ImportError:
+    LANGFUSE_AVAILABLE = False
+    CallbackHandler = None
 
 load_dotenv()
 
 
 def get_langfuse_handler():
     """Create Langfuse callback handler for observability"""
+    if not LANGFUSE_AVAILABLE:
+        return None
+        
     try:
         # Only create handler if API keys are provided
         secret_key = os.getenv("LANGFUSE_SECRET_KEY")
@@ -59,7 +67,7 @@ def get_enhanced_prompt(problem: str, iteration: int = 1) -> str:
     # Analyze problem complexity
     complexity_indicators = {
         'simple': any(op in problem.lower() for op in ['what is', 'calculate', '+', '-', '*', '/']),
-        'intermediate': any(term in problem.lower() for op in ['square root', 'power', 'factorial', 'order of operations']),
+        'intermediate': any(op in problem.lower() for op in ['square root', 'power', 'factorial', 'order of operations']),
         'complex': any(term in problem.lower() for term in ['step by step', 'multi-step', 'solve for', 'equation'])
     }
     
