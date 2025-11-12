@@ -45,3 +45,25 @@ Create a GitHub repository with the workflow files you want to use when coding a
 Include whatever files work for you - prompts, templates, checklists, or workflow definitions inspired by Promptkit, ai-dev-tasks, or \_ai.dev.
 
 Share it with the group in discord, along with any reflections you have on agentic coding.
+
+### Build a Simple API
+
+Pick any simple API (e.g., todo list, user management)
+Follow RED-GREEN-REFACTOR with evidence capture
+Practice integration testing with real database
+
+Choose a feature like "user authentication system"
+Create PRD → Generate tasks → Process step-by-step
+Practice the complete workflow
+
+### Secure Your Applications
+
+Scan your existing projects for vulnerabilities
+Learn security best practices
+Implement security improvements
+
+### Refactor Existing Code
+
+Analyze your existing calculator or chatbot code
+Identify improvement opportunities
+Refactor following best practices

@@ -14,7 +14,7 @@ See README.md for detailed step-by-step instructions.
 """
 
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from job_models import JobPosting
 
@@ -24,9 +24,9 @@ load_dotenv()
 def extract_job_posting(text: str) -> JobPosting:
     """Extract job posting information from text using structured output"""
     
-    # Initialize the LLM - using OpenAI since it's more reliable
-    llm = ChatOpenAI(
-        model="gpt-3.5-turbo", 
+    # Initialize the LLM - using Google Gemini
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-2.0-flash-exp", 
         temperature=0
     )
     
