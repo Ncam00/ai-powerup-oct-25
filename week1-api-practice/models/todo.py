@@ -5,7 +5,7 @@ Todo data models using Pydantic for validation and serialization
 from datetime import datetime
 from typing import Optional
 from uuid import UUID, uuid4
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class TodoBase(BaseModel):
@@ -33,11 +33,12 @@ class Todo(TodoBase):
     created_at: datetime = Field(default_factory=datetime.now, description="Creation timestamp")
     updated_at: datetime = Field(default_factory=datetime.now, description="Last update timestamp")
 
-    class Config:
-        json_encoders = {
+    model_config = ConfigDict(
+        json_encoders={
             datetime: lambda v: v.isoformat(),
             UUID: str
         }
+    )
 
 
 class TodoResponse(Todo):
