@@ -322,6 +322,8 @@ def test_agent_accomplishes_task():
 - [Anthropic Agent Patterns Cookbook](https://github.com/anthropics/anthropic-cookbook/tree/main/patterns/agents)
 
 ## Week 6 Completion Checklist
+
+### Core Exercises
 - ✅ Read Anthropic's multi-agent research and best practices
 - ✅ Implemented autonomous agent with LangGraph framework
 - ✅ Created 3+ custom tools with proper documentation
@@ -330,3 +332,31 @@ def test_agent_accomplishes_task():
 - ✅ Tested with multiple scenarios demonstrating capabilities
 - ✅ Followed Anthropic's design principles
 - ✅ Documented architecture and usage patterns
+
+### Optional Exercises (ALL COMPLETE!)
+- ✅ **Optional #1**: Cloned and analyzed code reviewer demo (Google ADK)
+  - See: `CODE_REVIEWER_ANALYSIS.md`
+  - Learnings: Sub-agent architecture, risk classification, production patterns
+  
+- ✅ **Optional #2**: Built comprehensive testing framework
+  - See: `test_agent.py` (500+ lines, 40+ tests)
+  - Coverage: Unit tests, integration tests, LLM-as-judge, performance, edge cases
+  
+- ✅ **Optional #3**: Implemented 4 different agent patterns
+  - See: `pattern_comparison.py` (400+ lines)
+  - Patterns: Augmented LLM, Prompt Chaining, Orchestrator-Workers, Autonomous Agent
+  
+- ✅ **Optional #4**: Added human-in-the-loop approval workflow
+  - See: `human_in_loop.py` (500+ lines)
+  - Features: Risk classification, approval workflow, audit trail
+
+### Additional Files
+- 📄 **`COMPLETION_SUMMARY.md`** - Comprehensive completion report with learnings
+- 📄 **`run_validation.py`** - Simple test runner (no pytest required)
+
+### Stats
+- **Total Files**: 8 (4 implementations + 4 docs)
+- **Lines of Code**: ~2,250
+- **Lines of Documentation**: ~1,000
+- **Test Count**: 40+ tests
+- **Completion**: 100% (Core + All Optional Exercises)
