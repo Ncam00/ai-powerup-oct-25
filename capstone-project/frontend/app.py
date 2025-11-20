@@ -11,7 +11,7 @@ from datetime import datetime
 import json
 
 # Configuration
-API_BASE_URL = "http://localhost:8000/api/v1"
+API_BASE_URL = "http://localhost:8000"
 API_TOKEN = "dev-token-change-in-production"
 
 # Page configuration
@@ -60,7 +60,7 @@ with st.sidebar:
     st.markdown("---")
     
     # Difficulty selector
-    difficulty = st.select box(
+    difficulty = st.selectbox(
         "Learning Level",
         ["beginner", "intermediate", "advanced"],
         index=0,
@@ -117,52 +117,48 @@ with tab1:
                 for code in message["code_examples"]:
                     st.code(code, language="python")
     
-    # Chat input
-    if prompt := st.chat_input("Type your Python question here..."):
+    # Input area
+    col1, col2 = st.columns([6, 1])
+    with col1:
+        user_input = st.text_input("Your question:", key="tutor_input", label_visibility="collapsed", 
+                                   placeholder="Type your Python question here...")
+    with col2:
+        send_button = st.button("Send", key="send_btn", use_container_width=True)
+    
+    if send_button and user_input:
         # Add user message
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        
-        with st.chat_message("user"):
-            st.markdown(prompt)
+        st.session_state.messages.append({"role": "user", "content": user_input})
         
         # Get AI response
-        with st.chat_message("assistant"):
-            with st.spinner("Thinking..."):
-                try:
-                    response = requests.post(
-                        f"{API_BASE_URL}/tutor/chat",
-                        json={
-                            "message": prompt,
-                            "session_id": st.session_state.session_id,
-                            "difficulty": st.session_state.difficulty,
-                            "use_voice": False,
-                            "context": []
-                        },
-                        headers={"Authorization": f"Bearer {API_TOKEN}"}
-                    )
-                    
-                    if response.status_code == 200:
-                        data = response.json()
-                        st.markdown(data["message"])
-                        
-                        # Add to session
-                        st.session_state.messages.append({
-                            "role": "assistant",
-                            "content": data["message"],
-                            "code_examples": data.get("code_examples", [])
-                        })
-                        
-                        # Show code examples
-                        if data.get("code_examples"):
-                            st.markdown("**Code Examples:**")
-                            for code in data["code_examples"]:
-                                st.code(code, language="python")
-                    else:
-                        st.error(f"API Error: {response.status_code}")
+        try:
+            response = requests.post(
+                f"{API_BASE_URL}/tutor/chat",
+                json={
+                    "message": user_input,
+                    "session_id": st.session_state.session_id,
+                    "difficulty": st.session_state.difficulty,
+                    "use_voice": False,
+                    "context": []
+                },
+                headers={"Authorization": f"Bearer {API_TOKEN}"}
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
                 
-                except Exception as e:
-                    st.error(f"Error: {e}")
-                    st.info("Note: Make sure the backend API is running on http://localhost:8000")
+                # Add to session
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": data["message"],
+                    "code_examples": data.get("code_examples", [])
+                })
+                st.rerun()
+            else:
+                st.error(f"API Error: {response.status_code}")
+        
+        except Exception as e:
+            st.error(f"Error: {e}")
+            st.info("Note: Make sure the backend API is running on http://localhost:8000")
 
 # TAB 2: CODE LAB
 with tab2:
@@ -200,14 +196,14 @@ with tab2:
                             if response.status_code == 200:
                                 result = response.json()
                                 
-                                if result["success"]:
-                                    st.success("✅ Execution successful!")
-                                    st.code(result["output"], language="text")
-                                else:
+                                if result.get("error"):
                                     st.error("❌ Execution failed")
                                     st.code(result["error"], language="text")
+                                else:
+                                    st.success("✅ Execution successful!")
+                                    st.code(result["output"], language="text")
                                 
-                                st.info(f"Execution time: {result['execution_time']:.3f}s")
+                                st.info(f"⏱️ Execution time: {result['execution_time']:.3f}s")
                             else:
                                 st.error(f"API Error: {response.status_code}")
                         

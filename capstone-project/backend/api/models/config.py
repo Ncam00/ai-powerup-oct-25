@@ -49,7 +49,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./learning_platform.db"
     
     class Config:
-        env_file = ".env"
+        env_file = "../.env"  # Look in parent directory
         case_sensitive = True
 
 settings = Settings()
